@@ -1,0 +1,249 @@
+/* Font stack - prefers Helvetica Neue */
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: linear-gradient(135deg, #f7f3e9 0%, #e6ddd4 50%, #d4c4b0 100%);
+  color: #3d2914;
+  line-height: 1.6;
+  overflow-x: hidden;
+  font-size: 16px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* HEADER */
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 40px 0;
+  background: rgba(139, 114, 78, 0.15);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(139, 114, 78, 0.2);
+}
+
+.header h1 {
+  font-size: 2.4em; /* balanced */
+  margin-bottom: 10px;
+  background: linear-gradient(45deg, #8b724e, #a0956b, #6d5835, #9d8f6a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s ease-in-out infinite alternate;
+}
+
+@keyframes shimmer {
+  0% { filter: brightness(1.2); }
+  100% { filter: brightness(0.8); }
+}
+
+.subtitle {
+  font-size: 1.1em;
+  color: #6d5835;
+  font-style: italic;
+}
+
+/* FIGURE CONTAINERS */
+.figure-container {
+  margin: 40px 0;
+  padding: 30px;
+  background: rgba(139, 114, 78, 0.08);
+  border-radius: 15px;
+  border: 1px solid rgba(139, 114, 78, 0.2);
+  box-shadow: 0 4px 15px rgba(139, 114, 78, 0.1);
+}
+
+.figure-title {
+  font-size: 1.2em;
+  margin-bottom: 15px;
+  color: #6d5835;
+  text-align: center;
+  font-weight: 600;
+}
+
+.figure-caption {
+  font-size: 0.9em;
+  color: #8b724e;
+  margin-top: 15px;
+  text-align: center;
+  font-style: italic;
+}
+
+/* TOPOLOGY DEMO */
+.topology-demo {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 300px;
+  position: relative;
+}
+
+.state-space {
+  width: 250px;
+  height: 250px;
+  border: 2px solid #8b724e;
+  border-radius: 50%;
+  position: relative;
+  background: #ffffff;
+}
+
+.point {
+  width: 10px;
+  height: 10px;
+  background: red; /* debug color */
+  border: 1px solid black;
+  border-radius: 50%;
+  position: absolute;
+  animation: pulse 2s ease-in-out infinite;
+  box-shadow: 0 0 8px rgba(160, 149, 107, 0.4);
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.7; }
+}
+
+.arrow {
+  font-size: 5em;
+  color: #6d5835;
+  animation: moveRight 2s ease-in-out infinite alternate;
+}
+
+@keyframes moveRight {
+  0% { transform: translateX(-10px); }
+  100% { transform: translateX(10px); }
+}
+
+.singularity {
+  width: 30px;
+  height: 30px;
+  background: radial-gradient(circle, #8b724e 0%, #a0956b 50%, transparent 100%);
+  border-radius: 50%;
+  animation: singularityPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes singularityPulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(139, 114, 78, 0.5); }
+  50% { transform: scale(1.8); box-shadow: 0 0 40px rgba(139, 114, 78, 0.8); }
+}
+
+/* MARKOV CHAIN SECTION */
+.markov-chain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  margin: 40px 0;
+}
+
+.state-node {
+  width: 60px;
+  height: 60px;
+  border: 3px solid #8b724e;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  position: relative;
+  background: rgba(139, 114, 78, 0.1);
+  color: #3d2914;
+}
+
+.absorbing {
+  border-color: #6d5835;
+  background: rgba(109, 88, 53, 0.2);
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 10px rgba(109, 88, 53, 0.5); }
+  100% { box-shadow: 0 0 30px rgba(109, 88, 53, 0.8); }
+}
+
+.slider {
+  width: 300px;
+  margin: 20px;
+  height: 8px;
+  border-radius: 5px;
+  background: linear-gradient(to right, #d4c4b0 0%, #8b724e 100%);
+  outline: none;
+}
+
+/* CONCEPT CARDS */
+.concept-distinction {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.concept-card {
+  padding: 30px;
+  background: rgba(139, 114, 78, 0.08);
+  border-radius: 15px;
+  border: 2px solid;
+  text-align: center;
+}
+
+.wahid-card {
+  border-color: #a0956b;
+}
+
+.ahad-card {
+  border-color: #8b724e;
+}
+
+.concept-title {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+
+.concept-description {
+  font-size: 1.05em;
+  line-height: 1.8;
+  color: #3d2914;
+}
+
+/* PHYSICAL ANALOGUES */
+.physical-analogues {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 40px 0;
+}
+
+.analogue-card {
+  padding: 25px;
+  background: rgba(139, 114, 78, 0.06);
+  border-radius: 12px;
+  border-left: 4px solid #8b724e;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.analogue-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(139, 114, 78, 0.2);
+}
+
+.analogue-title {
+  font-size: 1.2em;
+  color: #6d5835;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+/* PROOF SECTION (MATHJAX) */
+.hott-proof {
+  display: flex;
+  justify-content: center;
+  font-size: 0.9em;
+  margin-top: 20px;
+}
+
+.MathJax_Display {
+  margin: 0 auto !important;
+}
